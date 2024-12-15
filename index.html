@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Elements Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #result1, #result2, #result3 {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #000;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Elements Counter</h1>
+  <div id="container1" class="container">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+  </div>
+
+  <div id="container2" class="container">
+    <p>Paragraph 5</p>
+    <p>Paragraph 6</p>
+  </div>
+
+  <div class="container">
+    <p>Paragraph 7</p>
+    <p>Paragraph 8</p>
+    <p>Paragraph 9</p>
+    <p>Paragraph 10</p>
+  </div>
+
+  <button onclick="countElements()">Count Paragraphs</button>
+  <button onclick="countInContainer1()">Count Elements in Container 1</button>
+  <button onclick="countInContainer2()">Count Elements in Container 2</button>
+
+  <div id="result1"></div>
+  <div id="result2"></div>
+  <div id="result3"></div>
+
+  <script>
+    // Count how many <p> elements are on the page
+    function countElements() {
+      const paragraphs = document.querySelectorAll("p");
+      const resultDiv = document.getElementById("result1");
+      resultDiv.textContent = `There are ${paragraphs.length} paragraph tags on this page.`;
+    }
+
+    // Count how many elements are inside the first container
+    function countInContainer1() {
+      const container1 = document.getElementById("container1");
+      const elements = container1.querySelectorAll("*");
+      const resultDiv = document.getElementById("result2");
+      resultDiv.textContent = `There are ${elements.length} elements inside container 1.`;
+    }
+
+    // Count how many elements are inside the second container
+    function countInContainer2() {
+      const container2 = document.getElementById("container2");
+      const elements = container2.querySelectorAll("*");
+      const resultDiv = document.getElementById("result3");
+      resultDiv.textContent = `There are ${elements.length} elements inside container 2.`;
+    }
+  </script>
+
+</body>
+</html>
